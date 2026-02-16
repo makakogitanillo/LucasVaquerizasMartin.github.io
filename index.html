@@ -3,88 +3,156 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Lucas Vaquerizas Martin</title>
-  <meta name="description" content="Portfolio web de Lucas Vaquerizas Martin - Ilustrador de personajes">
+  <title>Lucas Vaquerizas - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset y base */
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Montserrat', sans-serif; }
+    body { background:#0a0a0a; color:#fff; line-height:1.6; }
+    a { text-decoration:none; color:inherit; }
 
-  <!-- Tipografías -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    /* Navbar */
+    header {
+      background: linear-gradient(to right, #1a1a1a, #2c2c2c);
+      position: sticky; top:0; z-index:1000;
+      display:flex; justify-content:space-between; align-items:center;
+      padding:1rem 2rem;
+      box-shadow:0 4px 8px rgba(0,0,0,0.5);
+    }
+    header h1 { font-weight:700; color:#ff1a1a; letter-spacing:2px; }
+    nav a {
+      margin-left:2rem; font-weight:600;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    nav a::after {
+      content:""; position:absolute; left:0; bottom:-4px; width:0%; height:2px; background:#ff1a1a; transition:0.3s;
+    }
+    nav a:hover::after { width:100%; }
+    nav a:hover { color:#ff1a1a; }
 
-  <link rel="stylesheet" href="style.css">
+    /* Secciones */
+    section { padding:6rem 2rem; max-width:1200px; margin:auto; opacity:0; transform:translateY(50px); transition:all 0.8s ease-in-out; }
+    section.visible { opacity:1; transform:translateY(0); }
+
+    /* Hero / About */
+    #about { display:flex; flex-wrap:wrap; align-items:center; gap:2rem; justify-content:center; }
+    #about img { width:280px; border-radius:50%; border:5px solid #ff1a1a; }
+    #about div { flex:1; max-width:600px; }
+
+    /* Projects */
+    #projects h2 { text-align:center; color:#ff1a1a; margin-bottom:2rem; }
+    .project-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2rem; }
+    .project-card {
+      background:#1f1f1f; padding:1rem; border-radius:12px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .project-card:hover { transform:translateY(-10px); box-shadow:0 12px 30px rgba(255,26,26,0.5); }
+    .project-card img { width:100%; border-radius:8px; margin-bottom:1rem; }
+
+    /* Skills */
+    #skills { text-align:center; }
+    .skill-list { display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-top:2rem; }
+    .skill { background:#ff1a1a; color:#fff; padding:0.5rem 1rem; border-radius:25px; font-weight:600; transition:0.3s; }
+    .skill:hover { transform:scale(1.1); }
+
+    /* Contact */
+    #contact form { display:flex; flex-direction:column; gap:1rem; max-width:500px; margin:auto; }
+    #contact input, #contact textarea { padding:0.8rem; border-radius:8px; border:1px solid #444; background:#111; color:#fff; }
+    #contact button {
+      padding:0.8rem; border:none; border-radius:8px;
+      background:#ff1a1a; color:#fff; font-weight:600; cursor:pointer;
+      transition: background 0.3s;
+    }
+    #contact button:hover { background:#ff4d4d; }
+
+    /* Footer */
+    footer { text-align:center; padding:2rem; background:#111; margin-top:2rem; color:#888; }
+
+    /* Responsive */
+    @media(max-width:768px){
+      #about { flex-direction:column; text-align:center; }
+      nav a { margin-left:0; margin-top:1rem; display:block; }
+      header { flex-direction:column; align-items:center; }
+    }
+  </style>
 </head>
 <body>
-
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="navbar__logo">Lucas Vaquerizas</div>
-    <nav class="navbar__links">
-      <button class="nav-btn active" data-screen="home">Inicio</button>
-      <button class="nav-btn" data-screen="projects">Proyectos</button>
-      <button class="nav-btn" data-screen="contact">Contacto</button>
+  <header>
+    <h1>Lucas Vaquerizas</h1>
+    <nav>
+      <a href="#about">Sobre mí</a>
+      <a href="#projects">Proyectos</a>
+      <a href="#skills">Habilidades</a>
+      <a href="#contact">Contacto</a>
     </nav>
-    <div class="navbar__toggle">&#9776;</div>
   </header>
 
-  <!-- PANTALLAS -->
-
-  <!-- HOME -->
-  <section id="home" class="screen active-screen">
-    <div class="home__container">
-      <div class="home__img">
-        <img src="assets/avatar.jpg" alt="Retrato Lucas Vaquerizas">
-      </div>
-      <div class="home__text">
-        <h1>¡Hola! 👋 Soy Lucas Vaquerizas</h1>
-        <p>Ilustrador de personajes 2D/3D, creando diseños únicos y expresivos.</p>
-        <button class="btn" data-screen="projects">Ver proyectos</button>
-      </div>
+  <section id="about">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTizU7VjID5zLXejBtFLyAWClkTN_YrkNQE9-n1Rh9y-xldyTYGfdwvpWIQtOp6gcRnnDExQgxz4bEbx4w3-NcaKVutN6tOrYX7IK_C8Hg&s=10" alt="Foto Lucas Vaquerizas">
+    <div>
+      <h2>Sobre mí</h2>
+      <p>Hola, soy Lucas Vaquerizas, ilustrador de personajes 2D y 3D. Creo diseños con personalidad y estilo único, inspirados en videojuegos y arte narrativo.</p>
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="screen">
-    <div class="projects__container">
-      <h2>Proyectos de Personajes</h2>
-      <div class="projects__grid">
-        <div class="project__card">
-          <img src="assets/project1.jpg" alt="Personaje 1">
-          <h3>Personaje Guerrero</h3>
-          <button class="btn">Ver proyecto</button>
-        </div>
-
-        <div class="project__card">
-          <img src="assets/project2.jpg" alt="Personaje 2">
-          <h3>Personaje Mago</h3>
-          <button class="btn">Ver proyecto</button>
-        </div>
-
-        <div class="project__card">
-          <img src="assets/project3.jpg" alt="Personaje 3">
-          <h3>Personaje Explorador</h3>
-          <button class="btn">Ver proyecto</button>
-        </div>
+  <section id="projects">
+    <h2>Proyectos Destacados</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Mia_Khalifa_in_2016.jpg/330px-Mia_Khalifa_in_2016.jpg">
+        <h3>Guerrero Épico</h3>
+        <p>Diseño de un personaje guerrero con armadura y estilo realista inspirado en fantasía medieval.</p>
+      </div>
+      <div class="project-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Mia_Khalifa_in_2016.jpg/330px-Mia_Khalifa_in_2016.jpg"">
+        <h3>Mago Arcano</h3>
+        <p>Personaje mágico con detalles de hechicería y vestimenta característica del universo 2D/3D.</p>
+      </div>
+      <div class="project-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Mia_Khalifa_in_2016.jpg/330px-Mia_Khalifa_in_2016.jpg">
+        <h3>Explorador Intrépido</h3>
+        <p>Diseño de explorador aventurero con accesorios y estilo dinámico, listo para narrativa visual.</p>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="screen">
-    <div class="contact__container">
-      <h2>Contacto</h2>
-      <form id="contact-form">
-        <input type="text" placeholder="Nombre" required>
-        <input type="email" placeholder="Correo electrónico" required>
-        <textarea placeholder="Mensaje" rows="6" required></textarea>
-        <button type="submit" class="btn">Enviar</button>
-        <p class="form-feedback"></p>
-      </form>
+  <section id="skills">
+    <h2>Habilidades</h2>
+    <div class="skill-list">
+      <span class="skill">Photoshop</span>
+      <span class="skill">Premiere</span>
+      <span class="skill">Blender</span>
+      <span class="skill">ZBrush</span>
+      <span class="skill">Animate</span>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <section id="contact">
+    <h2>Contacto</h2>
+    <form>
+      <input type="text" placeholder="Nombre" required>
+      <input type="email" placeholder="Correo electrónico" required>
+      <textarea rows="5" placeholder="Mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
   <footer>
-    <p>&copy; <span id="year"></span> Lucas Vaquerizas Martin</p>
+    &copy; <span id="year"></span> Lucas Vaquerizas - Todos los derechos reservados
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Animación scroll
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, {threshold:0.2});
+    sections.forEach(section => observer.observe(section));
+
+    // Año dinámico
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
