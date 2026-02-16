@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lucas Vaquerizas - Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
- <link rel="icon" type="image/png" href="https://img.icons8.com/color/1200/pornhub.jpg" />
+  <link rel="icon" type="image/png" href="https://img.icons8.com/color/1200/pornhub.jpg" />
 
   <style>
     /* Reset y base */
@@ -43,7 +43,7 @@
     #about div { flex:1; max-width:600px; }
 
     /* Projects */
-    #projects h2 { text-align:center; color:#ff1a1a; margin-bottom:2rem; }
+    #projects h2, #projects-3d h2 { text-align:center; color:#ff1a1a; margin-bottom:2rem; }
     .project-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2rem; }
     .project-card {
       background:#1f1f1f; padding:1rem; border-radius:12px;
@@ -85,41 +85,59 @@
     <h1>Lucas Vaquerizas</h1>
     <nav>
       <a href="#about">Sobre mí</a>
-      <a href="#projects">Proyectos</a>
+      <a href="#projects-3d">3D</a>
+      <a href="#projects">2D</a>
       <a href="#skills">Habilidades</a>
       <a href="#contact">Contacto</a>
     </nav>
   </header>
 
+  <!-- Sobre mí -->
   <section id="about">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTizU7VjID5zLXejBtFLyAWClkTN_YrkNQE9-n1Rh9y-xldyTYGfdwvpWIQtOp6gcRnnDExQgxz4bEbx4w3-NcaKVutN6tOrYX7IK_C8Hg&s=10" alt="Foto Lucas Vaquerizas">
     <div>
       <h2>Sobre mí</h2>
-      <p>Hola, soy Lucas Vaquerizas, ilustrador de personajes 2D y 3D. Creo diseños con personalidad y estilo único, inspirados en videojuegos y arte narrativo.</p>
+      <p>Hola, soy Lucas Vaquerizas, ilustrador de personajes 2D y 3D. Creo diseños con personalidad y estilo único, inspirados en videojuegos y arte narrativo. Me especializo en modelado 3D, texturizado y animación de personajes, así como ilustración digital y diseño conceptual.</p>
+      <p>Mi enfoque combina creatividad con técnica, buscando siempre que cada proyecto cuente una historia visual impactante.</p>
     </div>
   </section>
 
-  <section id="projects">
-    <h2>Proyectos Destacados</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEsBvmrosnofZm4X-J06OD22ZfoELDKwYw2w&s">
-        <h3>Guerrero Épico</h3>
-        <p>Diseño de un personaje guerrero con armadura y estilo realista inspirado en fantasía medieval.</p>
-      </div>
-      <div class="project-card">
-        <img src="https://clashofclans.wiki.gg/es/images/Archer_Queen_info.png?44db67">
-        <h3>Mago Arcano</h3>
-        <p>Personaje mágico con detalles de hechicería y vestimenta característica del universo 2D/3D.</p>
-      </div>
-      <div class="project-card">
-        <img src="https://static.wikia.nocookie.net/loquendocity/images/1/17/Ricardo_Milos.jpg/revision/latest?cb=20240830064741&path-prefix=es">
-        <h3>Explorador Intrépido</h3>
-        <p>Diseño de explorador aventurero con accesorios y estilo dinámico, listo para narrativa visual.</p>
-      </div>
+ <!-- Modelo 3D -->
+<section id="projects-3d">
+  <h2>Proyectos 3D</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <img src="assets/images/RenderGnomo.webp" alt="Personaje 3D Gnomo">
+      <h3>Gnomo 3D</h3>
+      <p>Modelado usando Maya y ZBrush de un diseño propio, un gnomo usando vestimenta casual.</p>
     </div>
-  </section>
+    <div class="project-card">
+      <img src="assets/images/Entorno_1.0135.webp" alt="Nuevo proyecto 3D">
+      <h3>Modelado y texturizado 3D de un Mono</h3>
+      <p>Modelo y Texturizado de un mono gigante añadido a un entorno 3D para una animación usando Maya.</p>
+    </div>
+  </div>
+</section>
 
+<!-- Otros proyectos 2D -->
+<section id="projects">
+  <h2>Proyectos 2D</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <img src="assets/images/20260214_184835~2.webp" alt="Explorador Intrépido">
+      <h3>Conejo jinete de Dodo</h3>
+      <p>Personaje fantástico con forma de conejo antropomorfico portando una lanza mientras cabalga a un dodo, con un estilo solemne.</p>
+    </div>
+    <div class="project-card">
+      <img src="assets/images/image.webp" alt="Mago arcano">
+      <h3>Buho arcano</h3>
+      <p>Personaje mágico con inspiracion de buho con armadura elaborada y detalles de hechicería. Inspirado en universos de fantasía, con enfoque en narrativa visual y diseño de silueta fuerte.</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Habilidades -->
   <section id="skills">
     <h2>Habilidades</h2>
     <div class="skill-list">
@@ -129,9 +147,12 @@
       <span class="skill">Blender</span>
       <span class="skill">ZBrush</span>
       <span class="skill">Animate</span>
+      <span class="skill">Substance Painter</span>
+      <span class="skill">After Effects</span>
     </div>
   </section>
 
+  <!-- Contacto -->
   <section id="contact">
     <h2>Contacto</h2>
     <form>
@@ -142,6 +163,7 @@
     </form>
   </section>
 
+  <!-- Footer -->
   <footer>
     &copy; <span id="year"></span> Lucas Vaquerizas - Todos los derechos reservados
   </footer>
