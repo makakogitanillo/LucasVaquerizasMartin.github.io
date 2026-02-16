@@ -1,53 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio | Portfolio de Nacho</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="shortcut icon" href="./assets/img/favicon.jpg" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Lucas Vaquerizas Martin</title>
+  <meta name="description" content="Portfolio web de Lucas Vaquerizas Martin - Ilustrador de personajes">
+
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header class="header">
-    <h1>Nacho</h1>
-    <p class="header-subtitle">Animación 3D · Modelado · Unity (C#)</p>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="navbar__logo">Lucas Vaquerizas</div>
+    <nav class="navbar__links">
+      <button class="nav-btn active" data-screen="home">Inicio</button>
+      <button class="nav-btn" data-screen="projects">Proyectos</button>
+      <button class="nav-btn" data-screen="contact">Contacto</button>
+    </nav>
+    <div class="navbar__toggle">&#9776;</div>
   </header>
 
-    <nav class="topnav">
-        <a class="active" href="./index.html">Inicio</a>
-        <a href="./sobremi.html">Sobre mí</a>
-        <a href="./formulario.html">Portfolio</a>
-        <a href="./contacto.html">Contacto</a>
-    </nav>
-      
-      <div class="content">
-        <div class="autobiografia">
-          <p> 
-            ¡Hola! Soy <strong>Nacho</strong>, estudiante de <strong>Animación 3D</strong>. Me apasiona crear personajes y escenas, desde el <strong>modelado</strong> y la <strong>animación</strong> hasta llevarlos a tiempo real con <strong>Unity</strong> programando en <strong>C#</strong>. Si quieres saber más, pásate por <a href="./sobremi.html">Sobre mí</a> o mira algunos trabajos en <a href="./formulario.html">Portfolio</a>.
-          </p>
-          <p><span>―Nacho</span></p>
-        </div>
-        
-        <div class="descripcion">
-          <p>
-            Trabajo principalmente en <strong>animación</strong> (acting, timing y poses), <strong>modelado</strong> (hard-surface y props) y <strong>programación</strong> en Unity (C#) para prototipos, interacción y lógica de juego. Me interesa especialmente la unión entre arte y tecnología.
-          </p>
-        </div>
+  <!-- PANTALLAS -->
 
-        <div class="descripcion">
-          <h2>Demo Reel General</h2>
-          <div class="video-embed" aria-label="Demo reel general">
-            <iframe src="https://www.youtube-nocookie.com/embed/uJ5dmdSsxbY" title="Demo Reel General — Nacho" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          </div>
-        </div>
-      
+  <!-- HOME -->
+  <section id="home" class="screen active-screen">
+    <div class="home__container">
+      <div class="home__img">
+        <img src="assets/avatar.jpg" alt="Retrato Lucas Vaquerizas">
       </div>
-      
-      
-      <footer class="footer">
-        <p>© 2026 Nacho | <a href="https://www.facebook.com/">Facebook </a> <a href="https://twitter.com/">Twitter </a> <a href="https://www.instagram.com/">Instagram </a> </p>
-      </footer>
+      <div class="home__text">
+        <h1>¡Hola! 👋 Soy Lucas Vaquerizas</h1>
+        <p>Ilustrador de personajes 2D/3D, creando diseños únicos y expresivos.</p>
+        <button class="btn" data-screen="projects">Ver proyectos</button>
+      </div>
+    </div>
+  </section>
 
+  <!-- PROJECTS -->
+  <section id="projects" class="screen">
+    <div class="projects__container">
+      <h2>Proyectos de Personajes</h2>
+      <div class="projects__grid">
+        <div class="project__card">
+          <img src="assets/project1.jpg" alt="Personaje 1">
+          <h3>Personaje Guerrero</h3>
+          <button class="btn">Ver proyecto</button>
+        </div>
+
+        <div class="project__card">
+          <img src="assets/project2.jpg" alt="Personaje 2">
+          <h3>Personaje Mago</h3>
+          <button class="btn">Ver proyecto</button>
+        </div>
+
+        <div class="project__card">
+          <img src="assets/project3.jpg" alt="Personaje 3">
+          <h3>Personaje Explorador</h3>
+          <button class="btn">Ver proyecto</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="screen">
+    <div class="contact__container">
+      <h2>Contacto</h2>
+      <form id="contact-form">
+        <input type="text" placeholder="Nombre" required>
+        <input type="email" placeholder="Correo electrónico" required>
+        <textarea placeholder="Mensaje" rows="6" required></textarea>
+        <button type="submit" class="btn">Enviar</button>
+        <p class="form-feedback"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; <span id="year"></span> Lucas Vaquerizas Martin</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
